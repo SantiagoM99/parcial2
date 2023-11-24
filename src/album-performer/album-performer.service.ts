@@ -16,17 +16,36 @@ export class AlbumPerformerService {
    ) {}
 
    async addPerformerAlbum(albumId: string, performerId: string): Promise<AlbumEntity> {
-       const performer: PerformerEntity = await this.performerRepository.findOne({where: {id: performerId}});
-       if (!performer)
-         throw new BusinessLogicException("The performer with the given id was not found", BusinessError.NOT_FOUND);
-     
-       const album: AlbumEntity = await this.albumRepository.findOne({where: {id: albumId}, relations: ["performers"]});
-       if (!album)
-         throw new BusinessLogicException("The album with the given id was not found", BusinessError.NOT_FOUND);
-   
-       album.performers = [...album.performers, performer];
-       return await this.albumRepository.save(album);
-     }
+    // Verifica si el intérprete existe
+    const performer: PerformerEntity = await this.performerRepository.findOne({ where: { id: performerId } });
+    if (!performer) {
+        throw new BusinessLogicException('The performer with the given id was not found', BusinessError.NOT_FOUND);
+    }
+
+    // Verifica si el álbum existe
+    const album: AlbumEntity = await this.albumRepository.findOne({ where: { id: albumId }, relations: ['performers'] });
+    if (!album) {
+        throw new BusinessLogicException('The album with the given id was not found', BusinessError.NOT_FOUND);
+    }
+
+    // Verificar si el álbum ya tiene tres intérpretes asociados
+    if (album.performers.length > 3) {
+        throw new BusinessLogicException('The album has already three performers', BusinessError.PRECONDITION_FAILED);
+    }
+
+    // Verificar si el intérprete ya está asociado al álbum
+    const isPerformerAssociated = album.performers.some((p) => p.id === performer.id);
+    if (isPerformerAssociated) {
+        throw new BusinessLogicException('The performer is already associated with the album', BusinessError.PRECONDITION_FAILED);
+    }
+
+    // Asociar el intérprete al álbum
+    album.performers.push(performer);
+    await this.albumRepository.save(album);  // Guardar los cambios en la base de datos
+    return album;
+}
+
+
    
    async findPerformerByAlbumIdPerformerId(albumId: string, performerId: string): Promise<PerformerEntity> {
        const performer: PerformerEntity = await this.performerRepository.findOne({where: {id: performerId}});

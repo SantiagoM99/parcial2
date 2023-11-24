@@ -102,6 +102,16 @@ describe('AlbumPerformerService', () => {
     await expect(() => service.addPerformerAlbum("0", newPerformer.id)).rejects.toHaveProperty("message", "The album with the given id was not found");
   });
 
+  it('addPerformerAlbum should throw an exception when there are already three performers associated to the album', async () => {
+    const finalPerformer: PerformerEntity = await performerRepository.save({
+    nombre: faker.lorem.word(),
+    descripcion: faker.lorem.sentence(),
+    imagen: faker.image.url(),
+    });
+
+    await expect(() => service.addPerformerAlbum(album.id, finalPerformer.id)).rejects.toHaveProperty("message", "The album has already three performers");
+  });
+
   it('findPerformerByAlbumIdPerformerId should return performer by album', async () => {
     const performer: PerformerEntity = performersList[0];
     const storedPerformer: PerformerEntity = await service.findPerformerByAlbumIdPerformerId(album.id, performer.id, )
@@ -121,6 +131,7 @@ describe('AlbumPerformerService', () => {
     const performer: PerformerEntity = performersList[0]; 
     await expect(()=> service.findPerformerByAlbumIdPerformerId("0", performer.id)).rejects.toHaveProperty("message", "The album with the given id was not found"); 
   });
+
 
   it('findPerformerByAlbumIdPerformerId should throw an exception for an performer not associated to the album', async () => {
     const newPerformer: PerformerEntity = await performerRepository.save({

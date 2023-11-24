@@ -7,11 +7,13 @@ import { TrackEntity } from './track.entity';
 import { TrackService } from './track.service';
 
 import { faker } from '@faker-js/faker';
+import { AlbumEntity } from '../album/album.entity';
 
 describe('TrackService', () => {
   let service: TrackService;
   let repository: Repository<TrackEntity>;
   let tracksList: TrackEntity[];
+  let repositoryAlbum: Repository<AlbumEntity>;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -21,6 +23,7 @@ describe('TrackService', () => {
 
     service = module.get<TrackService>(TrackService);
     repository = module.get<Repository<TrackEntity>>(getRepositoryToken(TrackEntity));
+    repositoryAlbum = module.get<Repository<AlbumEntity>>(getRepositoryToken(AlbumEntity));
     await seedDatabase();
   });
 
@@ -60,14 +63,22 @@ describe('TrackService', () => {
   });
 
   it('create should return a new track', async () => {
+    const album: AlbumEntity = await repositoryAlbum.save({
+      nombre: faker.lorem.word(),
+      fechaLanzamiento: faker.date.past(),
+      descripcion: faker.lorem.sentence(),
+      caratula: faker.image.url(),
+      tracks: [],
+      performers: []
+    });
     const track: TrackEntity = {
       id: "",
       nombre: faker.lorem.word(),
       duracion: faker.number.int(),
-      album: null
+      album: album
     }
 
-    const newTrack: TrackEntity = await service.create(track);
+    const newTrack: TrackEntity = await service.create(album.id,track);
     expect(newTrack).not.toBeNull();
 
     const storedTrack: TrackEntity = await repository.findOne({where: {id: newTrack.id}})
@@ -75,6 +86,17 @@ describe('TrackService', () => {
     expect(track.nombre).toEqual(storedTrack.nombre)
     expect(track.duracion).toEqual(storedTrack.duracion)
   });
+
+  it('create should throw an exception for an invalid album', async () => {
+    const track: TrackEntity = {
+      id: "",
+      nombre: faker.lorem.word(),
+      duracion: faker.number.int(),
+      album: null
+    }
+    await expect(() => service.create("0",track)).rejects.toHaveProperty("message", "The album with the given id was not found")
+  });
+
 
   it('update should modify a track', async () => {
     const track: TrackEntity = tracksList[0];

@@ -85,6 +85,34 @@ describe('AlbumService', () => {
     expect(album.caratula).toEqual(storedAlbum.caratula)
   });
 
+  it('create should not create a album with an empty name', async () => {
+    const album: AlbumEntity = {
+      id: "",
+      nombre: "",
+      descripcion: faker.lorem.sentence(),
+      fechaLanzamiento: faker.date.past(),
+      caratula: faker.image.url(),
+      tracks: [],
+      performers: []
+    }
+
+    await expect(() => service.create(album)).rejects.toHaveProperty("message", "The album's name can't be empty")
+  });
+
+  it('create should not create a album with an empty description', async () => {
+    const album: AlbumEntity = {
+      id: "",
+      nombre: faker.lorem.word(),
+      descripcion: "",
+      fechaLanzamiento: faker.date.past(),
+      caratula: faker.image.url(),
+      tracks: [],
+      performers: []
+    }
+
+    await expect(() => service.create(album)).rejects.toHaveProperty("message", "The album's description can't be empty")
+  });
+
   it('update should modify a album', async () => {
     const album: AlbumEntity = albumsList[0];
     album.nombre = "New name";

@@ -3,12 +3,17 @@ import { TrackEntity } from './track.entity';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { BusinessError, BusinessLogicException } from '../shared/errors/business-errors';
+import { StringColorFormat } from '@faker-js/faker';
+import { AlbumEntity } from '../album/album.entity';
 
 @Injectable()
 export class TrackService {
+    
     constructor(
         @InjectRepository(TrackEntity)
-        private readonly trackRepository: Repository<TrackEntity>
+        private readonly trackRepository: Repository<TrackEntity>,
+        @InjectRepository(AlbumEntity)
+        private readonly albumRepository: Repository<AlbumEntity>,
     ){}
 
     async findAll(): Promise<TrackEntity[]> {
@@ -23,7 +28,12 @@ export class TrackService {
         return track;
     }
 
-    async create(track: TrackEntity): Promise<TrackEntity> {
+    async create(albumId: string,track: TrackEntity): Promise<TrackEntity> {
+        
+        const album: AlbumEntity = await this.albumRepository.findOne({where: {id: albumId}, relations: ["tracks","performers"] } );
+        
+        if (!album)
+          throw new BusinessLogicException("The album with the given id was not found", BusinessError.NOT_FOUND);
         if (track.duracion < 0){
             throw new BusinessLogicException("The track's duration must be a positive number", BusinessError.BAD_REQUEST);
         }
