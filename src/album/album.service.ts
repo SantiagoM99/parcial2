@@ -24,10 +24,10 @@ export class AlbumService {
     }
 
     async create(album: AlbumEntity): Promise<AlbumEntity> {
-        if (album.nombre.length < 1 || album.nombre == ""){
+        if (album.nombre.length < 1 || album.nombre == "" || album.nombre == null){
             throw new BusinessLogicException("The album's name can't be empty", BusinessError.BAD_REQUEST);
         }
-        else if (album.descripcion.length < 1 || album.descripcion == ""){
+        else if (album.descripcion.length < 1 || album.descripcion == "" || album.descripcion == null){
             throw new BusinessLogicException("The album's description can't be empty", BusinessError.BAD_REQUEST);
         }
         
