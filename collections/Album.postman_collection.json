@@ -46,7 +46,37 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Create an Album",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Back in Black\",\n    \"caratula\": \"Caratula Back in Black\",\n    \"fechaLanzamiento\": \"2023-12-11T00:00:00.000Z\",\n    \"descripcion\": \"Es un disco bien agustin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/albums",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Create an Album with invalid name",
@@ -91,7 +121,37 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Create an Album with invalid name",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"\",\n    \"caratula\": \"Caratula Back in Black\",\n    \"fechaLanzamiento\": \"2023-12-11T00:00:00.000Z\",\n    \"descripcion\": \"Es un disco bien agustin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/albums",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Create an Album with invalid description",
@@ -135,7 +195,37 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Create an Album with invalid description",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Back in Black\",\n    \"caratula\": \"Caratula Back in Black\",\n    \"fechaLanzamiento\": \"2023-12-11T00:00:00.000Z\",\n    \"descripcion\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/albums",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Get an Album",
@@ -178,7 +268,38 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Get an Album",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/albums/{{album_id}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums",
+								"{{album_id}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Get an invalid Album",
@@ -226,7 +347,38 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Get an invalid Album",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/albums/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Get all Albums",
@@ -273,7 +425,37 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Get all Albums",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/albums",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Update an Album",
@@ -313,7 +495,38 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Update an Album",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Back in White\",\n    \"caratula\": \"Caratula Back in White\",\n    \"fechaLanzamiento\": \"2023-12-11T00:00:00.000Z\",\n    \"descripcion\": \"Es un disco bien aguston\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/albums/{{album_id}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums",
+								"{{album_id}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Update an invalid Album",
@@ -358,7 +571,38 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Update an invalid Album",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Back in White\",\n    \"caratula\": \"Caratula Back in White\",\n    \"fechaLanzamiento\": \"2023-12-11T00:00:00.000Z\",\n    \"descripcion\": \"Es un disco bien aguston\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/albums/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Delete an Album",
@@ -389,7 +633,29 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Delete an Album",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/albums/{{album_id}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums",
+								"{{album_id}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Delete an invalid Album",
@@ -425,7 +691,29 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Delete an invalid Album",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/albums/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		}
 	]
 }

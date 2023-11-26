@@ -46,7 +46,37 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Create an Album",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Back in Black\",\n    \"caratula\": \"Caratula Back in Black\",\n    \"fechaLanzamiento\": \"2023-12-11T00:00:00.000Z\",\n    \"descripcion\": \"Es un disco bien agustin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/albums",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Create a Performer",
@@ -88,7 +118,37 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Create a Performer",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Shakira\",\n    \"descripcion\": \"Buena cantante\",\n    \"imagen\":\"https://www.lecturas.com/medio/2022/06/16/shakira_0653595c_800x800.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/performers",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"performers"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Create a Second Performer",
@@ -130,7 +190,37 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Create a Second Performer",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Shakira\",\n    \"descripcion\": \"Buena cantante\",\n    \"imagen\":\"https://www.lecturas.com/medio/2022/06/16/shakira_0653595c_800x800.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/performers",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"performers"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Add a Performer to an Album",
@@ -150,7 +240,31 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Add a Performer to an Album",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/albums/{{album_id}}/performers/{{performer_id}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums",
+								"{{album_id}}",
+								"performers",
+								"{{performer_id}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Add an invalid Performer to an Album",
@@ -188,7 +302,31 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Add an invalid Performer to an Album",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/albums/{{album_id}}/performers/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums",
+								"{{album_id}}",
+								"performers",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Add a Performer to an invalid Album",
@@ -226,7 +364,31 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Add a Performer to an invalid Album",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/albums/00000000-0000-0000-0000-000000000000/performers/{{performer_id}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums",
+								"00000000-0000-0000-0000-000000000000",
+								"performers",
+								"{{performer_id}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Get a Performer of an Album",
@@ -246,7 +408,31 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Get a Performer of an Album",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/albums/{{album_id}}/performers/{{performer_id}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums",
+								"{{album_id}}",
+								"performers",
+								"{{performer_id}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Get an invalid Performer of an Album",
@@ -266,7 +452,31 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Get an invalid Performer of an Album",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/albums/{{album_id}}/performers/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums",
+								"{{album_id}}",
+								"performers",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Get a Performer of an invalid Album",
@@ -286,7 +496,31 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Get a Performer of an invalid Album",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/albums/00000000-0000-0000-0000-000000000000/performers/{{performer_id}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums",
+								"00000000-0000-0000-0000-000000000000",
+								"performers",
+								"{{performer_id}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Get a non-associated Performer of an Album",
@@ -324,7 +558,31 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Get a non-associated Performer of an Album",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/albums/{{album_id}}/performers/{{performer_id_2}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums",
+								"{{album_id}}",
+								"performers",
+								"{{performer_id_2}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Get Performers of an Album",
@@ -357,7 +615,30 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Get Performers of an Album",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/albums/{{album_id}}/performers",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums",
+								"{{album_id}}",
+								"performers"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Get Performers of an invalid Album",
@@ -394,7 +675,30 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Get Performers of an invalid Album",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/albums/00000000-0000-0000-0000-000000000000/performers",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums",
+								"00000000-0000-0000-0000-000000000000",
+								"performers"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Update Performers of an Album",
@@ -436,7 +740,39 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Update Performers of an Album",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n    \"nombre\": \"Shakira Isabel\",\n    \"descripcion\": \"Buena cantantin\",\n    \"imagen\":\"https://www.lecturas.com/medio/2022/06/16/shakira_0653595c_800x800.jpg\"\n    },\n    {\n    \"nombre\": \"Carlos Vives\",\n    \"descripcion\": \"Buen cantante\",\n    \"imagen\":\"https://www.lecturas.com/medio/2022/06/16/shakira_0653595c_800x800.jpg\"\n}\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/albums/{{album_id}}/performers",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums",
+								"{{album_id}}",
+								"performers"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Update invalid Performers of an Album",
@@ -482,7 +818,39 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Update invalid Performers of an Album",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n    \"id\": \"00000000-0000-0000-0000-000000000000\"\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/albums/{{album_id}}/performers",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums",
+								"{{album_id}}",
+								"performers"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Add a Performer to an Album",
@@ -502,7 +870,31 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Add a Performer to an Album",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/albums/{{album_id}}/performers/{{performer_id}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums",
+								"{{album_id}}",
+								"performers",
+								"{{performer_id}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Delete a Performer from an Album",
@@ -536,7 +928,31 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Delete a Performer from an Album",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/albums/{{album_id}}/performers/{{performer_id}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums",
+								"{{album_id}}",
+								"performers",
+								"{{performer_id}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Delete an invalid Performer from an Album",
@@ -574,7 +990,31 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Delete an invalid Performer from an Album",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/albums/{{album_id}}/performers/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums",
+								"{{album_id}}",
+								"performers",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Delete a non-associated Performer of an Album",
@@ -612,7 +1052,31 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Delete a non-associated Performer of an Album",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/albums/{{album_id}}/performers/{{performer_id_2}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums",
+								"{{album_id}}",
+								"performers",
+								"{{performer_id_2}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		}
 	]
 }

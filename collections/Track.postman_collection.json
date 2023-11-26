@@ -46,7 +46,37 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Create an Album",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Back in Black\",\n    \"caratula\": \"Caratula Back in Black\",\n    \"fechaLanzamiento\": \"2023-12-11T00:00:00.000Z\",\n    \"descripcion\": \"Es un disco bien agustin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/albums",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"albums"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Create a Track",
@@ -88,7 +118,37 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Create a Track",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Back in Black\",\n    \"duracion\": 200,\n    \"album\":\"{{album_id}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/tracks",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"tracks"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Create a Track with invalid duration",
@@ -132,7 +192,37 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Create a Track with invalid duration",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Back in Black\",\n    \"duracion\": -200,\n    \"album\":\"{{album_id}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/tracks",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"tracks"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Get a Track",
@@ -175,7 +265,38 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Get a Track",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/tracks/{{track_id}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"tracks",
+								"{{track_id}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Get an invalid Track",
@@ -223,7 +344,38 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Get an invalid Track",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/tracks/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"tracks",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Get all Tracks",
@@ -270,7 +422,37 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Get all Tracks",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/tracks",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"tracks"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Update a Track",
@@ -310,7 +492,38 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Update a Track",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Back in White\",\n    \"duracion\": 544\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/tracks/{{track_id}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"tracks",
+								"{{track_id}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Update an invalid Track",
@@ -355,7 +568,38 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Update an invalid Track",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Back in White\",\n    \"duracion\": 500\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/tracks/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"tracks",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Delete a Track",
@@ -386,7 +630,29 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Delete a Track",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/tracks/{{track_id}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"tracks",
+								"{{track_id}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Delete an invalid Track",
@@ -422,7 +688,29 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Delete an invalid Track",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/tracks/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"tracks",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		}
 	]
 }

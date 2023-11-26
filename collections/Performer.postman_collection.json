@@ -46,7 +46,37 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Create a Performer",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Shakira\",\n    \"descripcion\": \"Buena cantante\",\n    \"imagen\":\"https://www.lecturas.com/medio/2022/06/16/shakira_0653595c_800x800.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/performers",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"performers"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Create a Performer with invalid duration",
@@ -90,7 +120,37 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Create a Performer with invalid duration",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Shakira\",\n    \"descripcion\": \"Shakira Isabel Mebarak Ripoll (Atlántico, Barranquilla, 2 de febrero de 1977), conocida simplemente como Shakira, es una cantautora bailarina, actriz, empresaria y filántropa colombiana. Su alto nivel de ventas, versatilidad vocal y su éxito global la ha llevado a ser calificada por importantes revistas y medios con el apodo de «Reina del pop latino».\",\n    \"imagen\":\"https://www.lecturas.com/medio/2022/06/16/shakira_0653595c_800x800.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/performers",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"performers"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Get a Performer",
@@ -133,7 +193,38 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Get a Performer",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/performers/{{performer_id}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"performers",
+								"{{performer_id}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Get an invalid Performer",
@@ -181,7 +272,38 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Get an invalid Performer",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/performers/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"performers",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Get all Performers",
@@ -228,7 +350,37 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Get all Performers",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/performers",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"performers"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Update a Performer",
@@ -268,7 +420,38 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Update a Performer",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Shakira Isabel\",\n    \"descripcion\": \"Buena cantantin\",\n    \"imagen\":\"https://www.lecturas.com/medio/2022/06/16/shakira_0653595c_800x800.jpg\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/performers/{{performer_id}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"performers",
+								"{{performer_id}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Update an invalid Performer",
@@ -313,7 +496,38 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Update an invalid Performer",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Shakira Isabel\",\n    \"descripcion\": \"Buena cantantin\",\n    \"imagen\":\"https://www.lecturas.com/medio/2022/06/16/shakira_0653595c_800x800.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/performers/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"performers",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Delete a Performer",
@@ -344,7 +558,29 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Delete a Performer",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/performers/{{performer_id}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"performers",
+								"{{performer_id}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "Delete an invalid Performer",
@@ -380,7 +616,29 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Delete an invalid Performer",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/performers/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"performers",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
 		}
 	]
 }
